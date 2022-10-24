@@ -3,11 +3,12 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import { CurrencyData } from './features/currencyData/CurrencyData';
+import { Converter } from './features/converter/Converter';
 
 function App() {
     return (
         <div className="App">
-            <CurrencyData />
+            <Converter />
         {/* <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <Counter />
