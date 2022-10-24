@@ -1,4 +1,5 @@
 # interview_3205_test
 
 Screen Recording:
-https://user-images.githubusercontent.com/92257637/197499121-73108945-4c75-4103-b3ae-bd8ef78b5385.mov
+
+![Screen Recording 2022-10-24 at 15 35 34-2](https://user-images.githubusercontent.com/92257637/197501803-5f250cf6-7685-4cad-9d27-933bd90844a1.gif)
