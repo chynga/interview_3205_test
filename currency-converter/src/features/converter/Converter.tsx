@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { Button, Form, Input, InputGroup } from "reactstrap";
 import { useAppSelector } from "../../app/hooks";
 import { convert, ConverterParams, selectConvertedData } from "./converterSlice";
+import style from "./Converter.module.css";
+import { Link } from "react-router-dom";
 
 export function Converter() {
 
@@ -21,9 +24,7 @@ export function Converter() {
     const onSubmit = (e: any) => {
         e.preventDefault();        
         const params = trimInput(input)
-        if (params) {
-            console.log(params);
-            
+        if (params) {            
             dispatch(convert(params));
         }
     };
@@ -54,18 +55,25 @@ export function Converter() {
     }
     
     return (
-        <div>
-            <form  onSubmit={onSubmit}>
-                <input 
-                    type="text"
-                    placeholder="Confirm Password"
-                    value={input}
-                    onChange={onChange}
-                    required
-                    />
-                <button>Convert</button>
-            </form>
-            {convertedData?.result}
+        <div className={style.container}>
+            <Form  onSubmit={onSubmit}>
+                <InputGroup>
+                    <Input 
+                        type="text"
+                        placeholder="15 usd in rub"
+                        value={input}
+                        onChange={onChange}
+                        required
+                        />
+                    <Button>Convert</Button>
+                </InputGroup>
+            </Form>
+            <Link to='/exchange-rates'>Exchange Rates</Link>
+            <div>
+                {convertedData ? 
+                    "Result: " + convertedData.result : 
+                    ""}
+            </div>
         </div>
     );
 }

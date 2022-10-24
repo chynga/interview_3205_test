@@ -12,12 +12,19 @@ export const currencies = Object.keys(Currency).filter((item) => {
     return isNaN(Number(item));
 });
 
-const source = Currency.RUB
+// gets default language from browser and sets currency
+const getDefaultCurrency = (): Currency => {
+    if (navigator.language === 'en-US') {
+        return Currency.USD
+    }
 
-// export type Rates = {
-//     rates: [string, number][]
-// }
+    return Currency.RUB
+}
 
+// source currency
+const source = getDefaultCurrency()
+
+// response type 
 export type ExchangeRates = {
     quotes: any
     source: string
@@ -52,7 +59,6 @@ export const getData = createAsyncThunk(
             if (!data.success) {
                 return rejectWithValue(data.error)
             }
-            console.log(data)
             return data as ExchangeRates
         } catch (err) {
             const error: any = err
@@ -76,15 +82,6 @@ export const currencyDataSlice = createSlice({
         setSource: (state, action) => {
             state.source = action.payload
         }
-        // increment: (state) => {
-        // state.value += 1;
-        // },
-        // decrement: (state) => {
-        // state.value -= 1;
-        // },
-        // incrementByAmount: (state, action: PayloadAction<number>) => {
-        // state.value += action.payload;
-        // },
     },
 
     extraReducers: (builder) => {

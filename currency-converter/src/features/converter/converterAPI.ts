@@ -14,7 +14,6 @@ const convert = async (params: ConverterParams) => {
         },
     };
     const response = await axios.get(API_URL + `?to=${to}&from=${from}&amount=${amount}`, config);
-    console.log(response.data);
     
     return response.data
 };

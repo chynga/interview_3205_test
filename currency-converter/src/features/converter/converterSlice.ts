@@ -49,7 +49,7 @@ export const convert = createAsyncThunk(
                 
                 return rejectWithValue(data.error)
             }
-            console.log(data)
+
             return data as ConvertedData
         } catch (err) {
             const error: any = err
