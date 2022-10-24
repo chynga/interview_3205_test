@@ -7,7 +7,7 @@ const getData = async (source: Currency) => {
 
     const config = {
         headers: {
-            apikey: 'giAGjHPBnJDFRTOY9XYnJbliBvPMA7op',
+            apikey: 'yO7PnucQKSiFGyKPI441BmzStGwtzUh0',
         },
     };
     const currenciesParam = currencies.filter(currency => currency !== source).map(currency => currency + ',');

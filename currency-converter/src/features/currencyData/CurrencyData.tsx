@@ -21,7 +21,7 @@ export function CurrencyData() {
 
     return (
         <div className={style.container}>
-            <select name="source" id="source" onChange={onChange}>
+            <select name="source" id="source" onChange={onChange} defaultValue={source}>
                 <option value="RUB">RUB</option>
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
